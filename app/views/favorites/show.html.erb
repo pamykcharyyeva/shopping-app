@@ -1,0 +1,17 @@
+<h1>favorite show</h1>
+
+<ul>
+
+    <% current_user.favorites.each do |favorite| %> </p>
+           <h5> ~ <%= favorite.category.name %> ~ </h5>
+           <li> <%= link_to favorite.name, "http://#{favorite.link}" %> </li>
+           <%= button_to "Delete", favorite, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
+           <p> Do you want to edit this favorite link? <%= link_to "Edit", edit_favorite_path%></p>
+       <%end%>
+
+ 
+
+
+
+
+</ul>

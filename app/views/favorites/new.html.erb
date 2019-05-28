@@ -1,0 +1,11 @@
+<h1>favorite new</h1>
+
+
+<%= form_for @favorite do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %></br>
+<%= f.label :link %>
+<%= f.text_field :link %></br>
+<%= f.collection_select :category_id, Category.all, :id, :name%>
+ <%= submit_tag("Submit") %>
+ <%end%>

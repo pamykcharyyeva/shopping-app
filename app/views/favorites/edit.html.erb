@@ -1,0 +1,9 @@
+<h1>favorite edit</h1>
+<%= form_for @favorite do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %></br>
+    <%= f.label :link %>
+    <%= f.text_field :link %></br>
+    <%= f.collection_select :category_id, Category.all, :id, :name%>
+    <%= f.submit %>
+<%end%>
