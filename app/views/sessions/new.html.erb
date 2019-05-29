@@ -1,14 +1,21 @@
-<h1>Login</h1>
+
+<div class="ui inverted segment">
+
+
+    <h2 class="ui center aligned teal header"> Login</h2>
+
+
+</div>
 
 <h4><%= flash[:notice] %></h4>
 
 <!-- form will POST to '/login' -->
 <%= form_tag(login_path) do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+  <center><h4><%= label_tag :username %></h4></center>
+  <center><%= text_field_tag :username %></center>
 
-  <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <center><h4><%= label_tag :password %></h4></center>
+  <center><%= password_field_tag :password %></center>
 
-  <%= submit_tag 'Login' %>
+  <center><%= submit_tag("Login", class: 'ui grey button' )%></center>
 <% end %>

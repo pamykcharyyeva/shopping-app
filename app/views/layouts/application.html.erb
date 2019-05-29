@@ -2,18 +2,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Auth</title>
+    <title>Shoppin'</title>
+
+  <div class="ui green segment">
+      <div class="ui blue segment">
+
+        <h2 class="ui center aligned grey header">
+          Shopping App
+        </h2>
+      </div>
+
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+
 
   <body>
+  <style>
+    h3 {
+        text-align: justify;
+      }
+    h2 {
+
+        text-align: center;
+      }
+  </style>
     <% if current_user %>
 
     <% end %>
     <%= yield %>
-  </body>
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+
+    </body>
+  </head>
 </html>

@@ -1,12 +1,20 @@
-<h1>Sign up</h1>
+
+<div class="ui clearing segment">
+  <h2 class="ui left floated header">
+
+    <h2 class="ui teal header"> Sign up!</h2>
+
+  </h2>
+</div>
 
 <h4><%= flash[:notice] %></h4>
 
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
 
-  <%= f.submit %>
+<%= form_for @user do |f| %>
+  <center><h4><%= f.label :username %></h4></center>
+  <center><%= f.text_field :username %></center>
+  <center><h4><%= f.label :password %></h4></center>
+  <center><%= f.text_field :password %></center>
+
+<center>  <%= f.submit(class: 'ui grey button') %></center>
 <% end %>

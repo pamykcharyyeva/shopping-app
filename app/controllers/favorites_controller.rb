@@ -18,17 +18,17 @@ class FavoritesController < ApplicationController
       redirect_to favorites_path
   end
 
-    def edit
-        @favorite = Favorite.find(params[:id])
-    end
+  def edit
+      @favorite = Favorite.find(params[:id])
+  end
 
 
-    def update
-     @favorite = Favorite.find(params[:id])
-     @favorite.update(name: params[:favorite][:name],link: params[:favorite][:link], user_id: params[:id], category_id: params[:favorite][:category_id])
-     @favorite.save
-     redirect_to favorites_path
-    end
+  def update
+    @favorite = Favorite.find(params[:id])
+    @favorite.update(name: params[:favorite][:name],link: params[:favorite][:link], user_id: params[:id], category_id: params[:favorite][:category_id])
+    @favorite.save
+    redirect_to favorites_path
+  end
 
    def destroy
       @favorite = Favorite.find(params[:id])
@@ -42,5 +42,5 @@ class FavoritesController < ApplicationController
       params.require(:favorite).permit(:name, :link, :user_id, :category_id)
     end
 
-    
+
 end

@@ -1,11 +1,16 @@
-<h1>favorite new</h1>
-
-
-<%= form_for @favorite do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %></br>
-<%= f.label :link %>
-<%= f.text_field :link %></br>
-<%= f.collection_select :category_id, Category.all, :id, :name%>
- <%= submit_tag("Submit") %>
- <%end%>
+<h2 class="ui top attached teal header">
+  Create New Favorite
+</h2>
+<div class="ui attached segment">
+  <p><%= form_for @favorite do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all, :id, :name%>
+  <h4 class="ui horizontal divider header">
+    <p><%= f.submit(class: 'ui grey button') %></p>
+  </h4>
+  <% end %>
+</div>
