@@ -1,6 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <style>
+          div {
+          width:450px;
+          margin: auto;
+          border: 3px solid blue;
+          background-color: ghostwhite;
+           text-align: center;
+          }
+     </style>
+   <body>
+   </br>
+   <br><%= button_to 'Home page', user_path(current_user), method: :get %></br>
+   </br>
+    <br>
+     <br>
+     <div>
 <h1> All users</h1>
-<ul>
+
    <%@users.each do |user| %>
-   <li><%=link_to user.username.capitalize, user_path(user)%></li>
+   <h3>
+       <li><%=link_to user.username.capitalize, user_path(user)%></li>
+   </h3>
    <%end%>
-</ul>
+
+<div>
+     <body>
+    <html>
+      <head>

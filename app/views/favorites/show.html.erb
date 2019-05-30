@@ -10,13 +10,23 @@
              font-family: "Time Roman";
              color: solid black;
          }
+         div {
+         width:650px;
+         margin: auto;
+         border: 3px solid blue;
+         background-color: ghostwhite;
+         text-align: center;
+         }
       </style>
   </head>
     <body>
-        <h3>My favorite websites</h3>
-        <%= button_to 'Home page', user_path(current_user), method: :get %>
+        </br>
+        <br><%= button_to 'Home page', user_path(current_user), method: :get %></br>
+        </br>
+        <div>
+        <h3><p> ********  My favorite websites:  ********</p></h3>
+        </br>
         <ul>
-
             <il><% @user.favorites.each do |favorite| %> </il>
                    <h5> ~ <%= favorite.category.name %> ~ </h5>
                    <li> <%= link_to favorite.name, "http://#{favorite.link}" %> </li>
@@ -28,5 +38,6 @@
                <%end%>
                <%end%>
         </ul>
+        </div>
     </body>
 </html>
