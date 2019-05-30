@@ -1,12 +1,37 @@
-<h1>Sign up</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+     <style>
+          div {
+          width:450px;
+          margin: auto;
+          border: 3px solid blue;
+          background-color: ghostwhite;
+          }
+     </style>
+   <body>
+   <br>
+    <br>
+     <br>
 
-<h4><%= flash[:notice] %></h4>
+     <h3 class="text-center"> Welcome to shopping App!</h3>
+    </br>
+  <div>
+    </br>
+      <h3 class="text-center">Sign up</h3></br>
 
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :password %>
-  <%= f.text_field :password %>
+        <h4><%= flash[:notice] %></h4>
+        <h5  class="text-center">
+        <%= form_for @user do |f| %>
+          <%= f.label :username %>
+          <%= f.text_field :username %></br>
+          <%= f.label :password %>
+          <%= f.text_field :password %></br>
 
-  <%= f.submit %>
-<% end %>
+            <%= f.submit %>
+             <% end %>
+      </br>
+        </h5>
+   </div>
+ <body>
+</html>

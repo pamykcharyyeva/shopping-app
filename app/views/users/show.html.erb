@@ -1,15 +1,41 @@
-<h1> USER SHOW PAGE</h1>
-<p><%= @user.username %></p>
-<%= button_to 'Logout', logout_path, method: :delete %>
+<!DOCTYPE html>
+<html>
+  <head>
+     <style>
+            div {
+            width:450px;
+            margin: auto;
+            border: 3px solid blue;
+            background-color: ghostwhite;
+            }
+            h3 {
+                font-family: "Apple Chancery";
+                color: solid black;
+            }
+            h4 {
+                font-family: "Time Roman";
+                color: solid black;
+            }
+      </style>
+  </head>
+    <body>
+
+        <br><h4><%= button_to 'Logout', logout_path, method: :delete, class:"btn btn-primary" %></h4>
+        <h3 class="text-center"> <%= @user.username %>' Show page</h3>
+        </br>
+        </br>
 
 
-<p><%= link_to "Create new favorite", new_favorite_path(@user.id) %></p>
 
-<!-- <p><#% @user.favorites.each do |favorite| %></p> -->
-    <p><%= link_to "Favorite Websites", show_favorite_path(@user.id) %></p>
+     <div>
+         <% if current_user == @user %>
+        </br><h4 class="text-center"><%= link_to "Create new favorite", new_favorite_path(@user.id) %></h4>
+      <% end %>
+        </br><h4 class="text-center"><%= link_to "Favorite Websites", show_favorite_path(@user.id) %></h4>
 
-
-
-<% if current_user == @user %>
-  <%= button_to 'Delete This Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure you want to delete this account?' } %>
-<% end %>
+        <% if current_user == @user %>
+        <br><h4 class="text-center"><%= button_to 'Delete This Account', user_path(@user), method: :delete, class:"btn btn-primary", data: { confirm: 'Are you sure you want to delete this account?' } %> </h4>
+        <% end %>
+     </div>
+  </body>
+</html>

@@ -1,11 +1,29 @@
-<h1>favorite new</h1>
+<html>
+  <head>
+     <style>
+         h1 {
+             font-family: "Apple Chancery";
+             color: solid black;
+         }
+
+      </style>
+  </head>
+    <body>
 
 
-<%= form_for @favorite do |f| %>
+<h1 class="text-center">Create new Favorite</h1></br>
+
+
+<h4 class="text-center"> <%= form_for @favorite do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %></br>
 <%= f.label :link %>
 <%= f.text_field :link %></br>
-<%= f.collection_select :category_id, Category.all, :id, :name%>
- <%= submit_tag("Submit") %>
+<%= f.collection_select :category_id, Category.all, :id, :name%></br>
+<%= submit_tag("Submit") %>
  <%end%>
+
+</h4>
+
+</body>
+</html>
