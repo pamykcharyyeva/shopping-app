@@ -21,8 +21,13 @@
 
    <%@users.each do |user| %>
    <h3>
-       <li><%=link_to user.username.capitalize, user_path(user)%></li>
+
+       <% if current_user != user%>
+
+      <li> <%=link_to user.username.capitalize, user_path(user)%></li>
+
    </h3>
+   <%end%>
    <%end%>
 
 <div>
