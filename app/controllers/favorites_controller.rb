@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
 
    def show
    @categories = Category.all
+   @user = User.find(params[:id])
    end
 
    def new

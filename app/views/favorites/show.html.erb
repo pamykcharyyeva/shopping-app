@@ -14,15 +14,18 @@
   </head>
     <body>
         <h3>My favorite websites</h3>
-        <%= button_to 'Home page', user_path, method: :get %>
+        <%= button_to 'Home page', user_path(current_user), method: :get %>
         <ul>
-            <il><% current_user.favorites.each do |favorite| %> </il>
+
+            <il><% @user.favorites.each do |favorite| %> </il>
                    <h5> ~ <%= favorite.category.name %> ~ </h5>
                    <li> <%= link_to favorite.name, "http://#{favorite.link}" %> </li>
                    <% if current_user == @user %>
                    <%= button_to "Delete", favorite, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
                     <%end%>
-                   <p> Do you want to edit this favorite link? <%= link_to "Edit", edit_favorite_path%></p>
+                    <% if current_user == @user %>
+                  <p> Do you want to edit this favorite link? <%= link_to "Edit", edit_favorite_path%></p>
+               <%end%>
                <%end%>
         </ul>
     </body>

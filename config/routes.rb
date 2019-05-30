@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
  root to: 'sessions#new'
- resources :users, only: [:show, :new, :create, :destroy]
+ resources :users, only: [:index, :show, :new, :create, :destroy]
 
 
  get '/login', to: 'sessions#new', as: 'login'
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
  patch 'users/:id/favorites', to: 'favorites#update'
 
  resources :favorites
-
  resources :categories
 
 end
