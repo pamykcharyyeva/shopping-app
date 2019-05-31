@@ -1,14 +1,43 @@
-<h1>favorite show</h1>
-<%= button_to 'Home page', user_path, method: :get %>
-<ul>
-
-    <% current_user.favorites.each do |favorite| %> </p>
-           <h5> ~ <%= favorite.category.name %> ~ </h5>
-           <li> <%= link_to favorite.name, "http://#{favorite.link}" %> </li>
-           <%= button_to "Delete", favorite, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
-           <p> Do you want to edit this favorite link? <%= link_to "Edit", edit_favorite_path%></p>
-       <%end%>
-
-
-
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+     <style>
+         h3 {
+             font-family: "Apple Chancery";
+             color: solid black;
+         }
+         h5 {
+             font-family: "Time Roman";
+             color: solid black;
+         }
+         div {
+         width:650px;
+         margin: auto;
+         border: 3px solid blue;
+         background-color: ghostwhite;
+         text-align: center;
+         }
+      </style>
+  </head>
+    <body>
+        </br>
+        <br><%= button_to 'Home page', user_path(current_user), method: :get %></br>
+        </br>
+        <div>
+        <h3><p> ********  My favorite websites:  ********</p></h3>
+        </br>
+        <ul>
+            <il><% @user.favorites.each do |favorite| %> </il>
+                   <h5> ~ <%= favorite.category.name %> ~ </h5>
+                   <li> <%= link_to favorite.name, "http://#{favorite.link}" %> </li>
+                   <% if current_user == @user %>
+                   <%= button_to "Delete", favorite, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
+                    <%end%>
+                    <% if current_user == @user %>
+                  <p> Do you want to edit this favorite link? <%= link_to "Edit", edit_favorite_path%></p>
+               <%end%>
+               <%end%>
+        </ul>
+        </div>
+    </body>
+</html>

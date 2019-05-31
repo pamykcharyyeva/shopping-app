@@ -5,6 +5,7 @@ class FavoritesController < ApplicationController
 
    def show
    @categories = Category.all
+   @user = User.find(params[:id])
    end
 
    def new
@@ -14,14 +15,13 @@ class FavoritesController < ApplicationController
    def create
       # byebug
       @favorite = Favorite.new(name: params[:favorite][:name],link: params[:favorite][:link], user_id: params[:id], category_id: params[:favorite][:category_id])
-      @favorite.save
+       @favorite.save
       redirect_to favorites_path
   end
 
-    def edit
-        @favorite = Favorite.find(params[:id])
-    end
-
+  def edit
+      @favorite = Favorite.find(params[:id])
+end
 
     def update
      @favorite = Favorite.find(params[:id])
@@ -29,6 +29,9 @@ class FavoritesController < ApplicationController
      @favorite.save
      redirect_to favorites_path
     end
+
+
+
 
    def destroy
       @favorite = Favorite.find(params[:id])
@@ -42,5 +45,5 @@ class FavoritesController < ApplicationController
       params.require(:favorite).permit(:name, :link, :user_id, :category_id)
     end
 
-    
+
 end

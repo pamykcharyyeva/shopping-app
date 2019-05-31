@@ -1,14 +1,33 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html>
+<body>
+<br>
+<br>
+<br>
+<div>
+<p class="text-center">
 
-<h4><%= flash[:notice] %></h4>
+<h3 class="text-center"> Welcome back to Webs App!</h3>
+</p>
+</div>
 
+<h3 class="text-center">Login</h3></br>
+
+<h4 class="text-center"><%= flash[:notice] %></h4>
+<h5  class="text-center">
 <!-- form will POST to '/login' -->
 <%= form_tag(login_path) do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+ <%= label_tag :username %>
+  <%= text_field_tag :username %></br>
 
   <%= label_tag :password %>
-  <%= password_field_tag :password %>
+  <%= password_field_tag :password %></br>
 
   <%= submit_tag 'Login' %>
 <% end %>
+
+<h4 class="text-center"> New here? </h4>
+<h4 class="text-center"><%= button_to 'Sign up', signup_path, method: :get %></h4>
+</h5>
+<body>
+</html>
